@@ -1,6 +1,9 @@
 class Nyt::CLI 
   
   def call 
-    puts "Hello World"
+    Nyt::API.new.fetch 
+    Nyt::Books.all.each do |list|
+    puts list.name 
+    end
   end 
 end
