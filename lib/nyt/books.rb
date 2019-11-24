@@ -1,11 +1,11 @@
 class Nyt::Books
-  attr_accessor :name, :rank, :link
+  attr_accessor :rank, :title, :author
   @@all = []
   
-  def initialize(name,rank,link)
-    @name = name 
+  def initialize(rank,title,author)
     @rank = rank
-    @link = link
+    @title = title 
+    @author = author
     @@all << self 
   end 
   
