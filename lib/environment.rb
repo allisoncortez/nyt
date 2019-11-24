@@ -1,4 +1,5 @@
 require 'pry'
+require 'httparty'
 
 require_relative 'nyt/version'
 require_relative 'nyt/api'
