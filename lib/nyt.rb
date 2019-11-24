@@ -1,6 +1,8 @@
-require "nyt/version"
+require 'pry'
 
-module Nyt
-  class Error < StandardError; end
-  # Your code goes here...
-end
+require_relative 'nyt/version'
+require_relative 'nyt/api'
+require_relative 'nyt/cli'
+require_relative 'nyt/articles'
+
+
