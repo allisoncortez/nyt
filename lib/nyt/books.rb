@@ -15,4 +15,7 @@ class Nyt::Books
     @@all 
   end
   
+  
+  
+  
 end

@@ -9,6 +9,7 @@ class Nyt::API
       author = book["author"]
       description = book["description"]
       link = book["amazon_product_url"]
+      
       Nyt::Books.new(title,author,description,link)
     
     # binding.pry

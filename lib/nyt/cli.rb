@@ -1,7 +1,7 @@
 class Nyt::CLI 
   
   def call
-    puts "Hey there, Bookworm! Pick a category:"
+    puts "Hey there, Bookworm! Here are the current best sellers:"
     best_sellers
     menu
     bye
@@ -10,7 +10,6 @@ class Nyt::CLI
   def best_sellers
     # Category Name here:
     # 1. Book Title by Author(example of list item..)
-    
     
     Nyt::API.new.fetch 
     Nyt::Books.all.each.with_index(1) do |list, i|
@@ -21,25 +20,24 @@ class Nyt::CLI
   def menu 
     input = nil
     while input != "exit"
-      puts "Want more info? You can: 1. Input a number from the list. 2. Type list to view the full list again. 3. Type exit to leave. "
+      puts "1. Input a number from the list. 2. Type 'list' to view the full list again. 3. Type 'exit' to leave. "
       input = gets.strip.downcase
-      case input
-      when "1"
-        puts "1. Title by Author - description of book - amazon link"
-      when "2"
-        puts "2. Title by Author - description of book - amazon link"
-      when "3"
-        puts "3. Title by Author - description of book - amazon link"
-      when "list"
-        best_sellers
+
+
+      if input.to_i > 0 
+        Nyt::Books.all.each.with_index(1) do |list|
+        puts "#{list.title} by #{list.author} - #{list.link}"
+        end
+        elsif input == "list"
+        best_sellers 
       else 
-        puts "INVALID INPUT:"
+        puts "INVALID INPUT: type 'list' or 'exit'"
       end 
     end
   end
   
   def bye 
-    puts "goodbye message here"
+    puts "Bye Nerd."
   end
   
 end
