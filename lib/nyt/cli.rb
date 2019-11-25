@@ -7,6 +7,9 @@ class Nyt::CLI
     bye
   end 
   
+  
+  #another method: API fetch
+  
   def best_sellers
     # list from API fetch/call
     
