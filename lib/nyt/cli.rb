@@ -1,7 +1,7 @@
 class Nyt::CLI 
   
   def call
-    puts "Hey there, Bookworm!"
+    puts "Hey there, Bookworm! Pick a category:"
     best_sellers
     menu
     bye
@@ -12,11 +12,9 @@ class Nyt::CLI
     # Category Name here:
     # 1. Book Title by Author(example of list item..)
     Nyt::API.new.fetch 
-    Nyt::Books.all.each do |list|
-    puts list.title
+    Nyt::Books.all.each.with_index(1) do |list, i|
+    puts "#{i}. #{list.title} by #{list.author}"
     end
-    
-    
   end
   
   def menu 
