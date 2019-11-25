@@ -15,7 +15,7 @@ class Nyt::CLI
     
     Nyt::API.new.fetch 
     Nyt::Books.all.each.with_index(1) do |list, i|
-    puts "#{i}. #{list.title} by #{list.author}"
+    puts "#{i}. #{list.title} #{list.author}"
     end
   end
   
@@ -27,8 +27,10 @@ class Nyt::CLI
 
 
       if input.to_i > 0 
+        Nyt::API.new.fetch 
         Nyt::Books.all.each.with_index(1) do |list|
-        puts "#{list.title} by #{list.author} - #{list.link}"
+          # binding.pry
+        puts "#{list.title} #{list.author} - #{list.link}"
         end
         elsif input == "list"
         best_sellers 
