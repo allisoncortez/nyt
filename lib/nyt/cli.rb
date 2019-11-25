@@ -1,21 +1,27 @@
 class Nyt::CLI 
   
-  def call 
+  def call
+    puts "Hey there, Bookworm!"
+    best_sellers
+    menu
+    bye
+  end 
+  
+  def best_sellers
+    puts "Best Sellers list from the category user has specified.."
+    # Category Name here:
+    # 1. Book Title by Author(example of list item..)
     Nyt::API.new.fetch 
     Nyt::Books.all.each do |list|
     puts list.title
     end
-  end 
-  
-  def best_sellers
-    #puts Best Sellers list from the category user has specified..
-    # Category Name here:
-    # 1. Book Title by Author(example of list item..)
+    
+    
   end
   
   def menu 
-    while input != "See yah!"
-      puts "For more info, input a number from the list.If you'd like to leave, input 'See yah!'"
+    while input != "exit"
+      puts "Want more info? You can: 1. Input a number from the list. 2. Type list to view the full list again. 3. Type exit to leave. "
       input = gets.strip.downcase
       case input
       when "1"
@@ -24,6 +30,10 @@ class Nyt::CLI
         puts "2. Title by Author - description of book - amazon link"
       when "3"
         puts "3. Title by Author - description of book - amazon link"
+      when "list"
+        best_sellers
+      else 
+        puts "Want more info? You can: 1. Input a number from the list. 2. Type list to view the full list again. 3. Type exit to leave."
       end 
     end
   end
