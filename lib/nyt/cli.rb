@@ -8,9 +8,10 @@ class Nyt::CLI
   end 
   
   def best_sellers
-    puts "Best Sellers list from the category user has specified.."
     # Category Name here:
     # 1. Book Title by Author(example of list item..)
+    
+    
     Nyt::API.new.fetch 
     Nyt::Books.all.each.with_index(1) do |list, i|
     puts "#{i}. #{list.title} by #{list.author}"
@@ -18,6 +19,7 @@ class Nyt::CLI
   end
   
   def menu 
+    input = nil
     while input != "exit"
       puts "Want more info? You can: 1. Input a number from the list. 2. Type list to view the full list again. 3. Type exit to leave. "
       input = gets.strip.downcase
@@ -31,7 +33,7 @@ class Nyt::CLI
       when "list"
         best_sellers
       else 
-        puts "Want more info? You can: 1. Input a number from the list. 2. Type list to view the full list again. 3. Type exit to leave."
+        puts "INVALID INPUT:"
       end 
     end
   end
