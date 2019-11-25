@@ -8,8 +8,7 @@ class Nyt::CLI
   end 
   
   def best_sellers
-    # Category Name here:
-    # 1. Book Title by Author(example of list item..)
+    # list from API fetch/call
     
     Nyt::API.new.fetch 
     Nyt::Books.all.each.with_index(1) do |list, i|
