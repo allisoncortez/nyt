@@ -1,12 +1,14 @@
 class Nyt::API 
   def fetch 
     key = "C9IM2TSLGbkXfHjIpP2ThdAEHTkIZzFV"
-    url = "https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=#{key}"
+    # url = "https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=#{key}"
+    url = "https://api.nytimes.com/svc/books/v3/lists/overview.json?api-key=#{key}"
   
     response = HTTParty.get(url)
     # title = response["results"]["books"][0]["title"]
     
-    response["results"]["books"].each do |book|
+    response["results"]["lists"][0]["books"].each do |book|
+      # binding.pry
       
       # rank = book["rank"]
       # list_name = response["results"]["list_name"]
