@@ -11,11 +11,16 @@ class Nyt::CLI
   def best_sellers
     
     #get user input
+     input = gets.strip.downcase
+     
     #spit out correct list of 5 bestsellers for the genre that was selected.
     
+     if input.to_i > 0 
     Nyt::API.new.fetch
     Nyt::Books.all.each.with_index(1) do |list, i|
     puts "#{i}. #{list.title} #{list.author}"
+    puts "Description: #{list.description}"
+    puts "Publisher:#{list.publisher} - ISBN number:#{list.isbn}"
 
     
   #     profile_page = Nokogiri::HTML(open(profile_url))
@@ -37,7 +42,7 @@ class Nyt::CLI
     
     
     
-    
+      end
     end
   end
   
