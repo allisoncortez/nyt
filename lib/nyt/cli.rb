@@ -9,7 +9,7 @@ class Nyt::CLI
   end 
   
   def genre_list
-    
+   
   end
   
   
