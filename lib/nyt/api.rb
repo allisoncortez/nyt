@@ -6,21 +6,25 @@ class Nyt::API
     url = "https://api.nytimes.com/svc/books/v3/lists/overview.json?api-key=#{key}"
   
     response = HTTParty.get(url)
-    # title = response["results"]["books"][0]["title"]
     
-    response["results"]["lists"].each do |book|
-      binding.pry
     
-      # # list_name = response["results"]["list_name"]
-      # title = book["title"]
-      # author = book["contributor"]
+    # book_title = response["results"]["books"][0]["title"]
+    # list_name = response["results"]["lists"][0]["list_name"]
+    response["results"]["lists"].each do |list|
+      # binding.pry
+      
+      list_name = list[list_name]
+      title = list["books"][0]["title"]
+      author = list["books"][0]["contributor"]
       # description = book["description"]
-      # link = book["amazon_product_url"]
-      # # buy_links = book ["buy_links"]
+      # # link = book["amazon_product_url"]
+      # buy_links = book ["buy_links"]
+      # publisher = 
+      # isbn = 
       
       
    
-      # Nyt::Books.new(title,author,description,link)
+      # Nyt::Books.new(list_name, title, author, description,buy_links, publisher, isbn)
     
     end
   end 
