@@ -8,6 +8,11 @@ class Nyt::CLI
     bye
   end 
   
+  def genre_list
+    
+  end
+  
+  
   def best_sellers
     
     #get user input
@@ -18,9 +23,10 @@ class Nyt::CLI
      if input.to_i > 0 
     Nyt::API.new.fetch
     Nyt::Books.all.each.with_index(1) do |list, i|
+      # binding.pry
     puts "#{i}. #{list.title} #{list.author}"
     puts "Description: #{list.description}"
-    puts "Publisher:#{list.publisher} - ISBN number:#{list.isbn}"
+    puts "Publisher: #{list.publisher} - ISBN number: #{list.isbn}"
 
     
   #     profile_page = Nokogiri::HTML(open(profile_url))
