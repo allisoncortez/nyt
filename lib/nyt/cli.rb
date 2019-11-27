@@ -10,12 +10,13 @@ class Nyt::CLI
   
   #another method: API fetch
   
-  def best_sellers
+  def best_sellers_by_genre
     # list from API fetch/call
     
-    Nyt::API.new.fetch 
+    Nyt::API.new.fetch
     Nyt::Books.all.each.with_index(1) do |list, i|
-    puts "#{i}. #{list.title} #{list.author}"
+    # puts "#{i}. #{list.title} #{list.author}"
+    puts "#{i}. #{list.list_name}"
     end
   end
   
