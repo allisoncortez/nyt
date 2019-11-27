@@ -1,22 +1,17 @@
 class Nyt::CLI 
   
   def call
-    puts "Hey there, Bookworm! Here are the current best sellers:"
+    puts "Hey there, Bookworm! Pick a Genre to see NYTimes bestseller lists."
+    puts "put list here. 1-18, hardcoded"
     best_sellers
     menu
     bye
   end 
   
-  
-  #another method: API fetch
-  
-  def best_sellers_by_genre
-    # list from API fetch/call
-    
+  def best_sellers
     Nyt::API.new.fetch
     Nyt::Books.all.each.with_index(1) do |list, i|
-    # puts "#{i}. #{list.title} #{list.author}"
-    puts "#{i}. #{list.list_name}"
+    puts "#{i}. #{list.title} #{list.author}"
     end
   end
   
