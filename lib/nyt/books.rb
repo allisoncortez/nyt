@@ -7,7 +7,7 @@ class Nyt::Books
     @title = title 
     @author = author
     @description = description
-    @links = link
+    @links = links
     @publisher = publisher
     @isbn = isbn
     @@all << self 
