@@ -4,15 +4,20 @@ class Nyt::CLI
     puts "\nHey there, Bookworm!"
     puts "Here are Penguin's Top 15 best sellers.."
     
+    get_list
     best_seller_list
     get_chosen_book
   end
   
+  def get_list
+    @books = Nyt::Books.all
+  end
+  
   def best_seller_list
     puts "\nChoose a book to see it's details."
-    @books = Nyt::API.new.fetch
-    Nyt::Books.all.each.with_index(1) do |book, i|
-      puts "#{i}. #{book.title} #{book.author}"
+    Nyt::API.new.fetch
+    @books.each.with_index(1) do |book, i|
+      puts "#{i}. #{book.title} by #{book.author}"
     end
   end
   
@@ -24,10 +29,16 @@ class Nyt::CLI
   
   def book_details(chosen_book)
     book = @books[chosen_book - 1]
-    puts "\n#{book["title"]} by #{book["author"]}:"
-    puts "Description:#{book["description"]}"
+    # Nyt::Books.all.each do |item|
+      # binding.pry
+      
+      # Nyt::Books.all.each do |book|
+        # binding.pry
+        puts "\n--------Book Details------------------------------------------------------"
+        puts "\n#{book.title}\n"
+        puts "Author:#{book.author}"
+        puts "#{book.description}"
   end
-  
   
   
   

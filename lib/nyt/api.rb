@@ -12,7 +12,7 @@ class Nyt::API
     response["results"].each do |book|
  
       title = book["title"]
-      author = book["contributor"]
+      author = book["author"]
       description = book["description"]
       reviews = book["reviews"][0]["book_review_link"]
       
