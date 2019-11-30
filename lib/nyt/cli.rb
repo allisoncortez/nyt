@@ -7,16 +7,17 @@ class Nyt::CLI
     puts "Hey there, Bookworm!...."
     puts "Penguin's Top 15 best sellers.."
     
+    best_seller_list
+    
+  end
+  
+  def best_seller_list
     Nyt::API.new.fetch
-      Nyt::Books.all.each.with_index(1) do |book, i|
-        # binding.pry
+    Nyt::Books.all.each.with_index(1) do |book, i|
       puts "#{i}. #{book.title} #{book.author}"
     end
     
-    # menu
-    
   end
-    
     
   
 #   def genre_list
@@ -63,8 +64,6 @@ class Nyt::CLI
       puts "5. Type 'exit' to leave."
       
       input = gets.strip.downcase
-
-
       if input.to_i > 0 
         Nyt::API.new.fetch 
         Nyt::Books.all.each.with_index(1) do |list|
@@ -78,6 +77,8 @@ class Nyt::CLI
       end 
     end
   end
+  
+  
   
   def bye 
     puts "Bye Nerd."
