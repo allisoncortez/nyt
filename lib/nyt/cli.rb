@@ -1,17 +1,30 @@
 class Nyt::CLI 
   
   def call
-    puts "Hey there, Bookworm!Here's a list of NYT Best Sellers."
-    puts "put list here. 1-18, hardcoded"
+    puts "Hey there, Bookworm!Here's a list of NYT Best Sellers. Pick a genre you'd like to explore by typing in the corresponding number."
+    puts "1. Combined Print & E-Book Fiction"
+    puts "2. Combined Print & E-Book Nonfiction"
+    puts "3. Children's Picture Books"
+    puts "4. Graphic Books & Manga"
+    puts "5. Advice, How-to & Misc."
   
     
-    list
+    # genre_list
     # menu
     # bye
     end
   end 
   
   def genre_list
+    input = gets.strip.downcase
+    
+    if input.to_i > 0 
+      Nyt::API.new.fetch
+      Nyt::Books.all.each.with_index(1) do |list, i|
+      # binding.pry
+      puts "#{i}. #{list.title} #{list.author}"
+
+    
    
   end
   
@@ -23,7 +36,7 @@ class Nyt::CLI
     
   end
   
-  def best_sellers
+  def book_info
     
   #   #get user input
   #   input = gets.strip.downcase
