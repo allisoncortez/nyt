@@ -1,12 +1,29 @@
 class Nyt::CLI 
   
   def call
-    puts "Hey there, Bookworm!Here's a list of NYT Best Sellers. Pick a genre you'd like to explore by typing in the corresponding number."
-    puts "1. Combined Print & E-Book Fiction"
-    puts "2. Combined Print & E-Book Nonfiction"
-    puts "3. Children's Picture Books"
-    puts "4. Graphic Books & Manga"
-    puts "5. Advice, How-to & Misc."
+    user_input = ""
+    
+    while user_input != "exit"
+    puts "Hey there, Bookworm!...."
+    puts "Penguin's Top 15 best sellers.."
+    
+    
+    puts "Type a number from the book list to view it's full details."
+    puts "Type 'best sellers' to view the best sellers list again."
+    puts "To exit, type 'exit'"
+    
+      
+      user_input = gets.strip
+      
+      case user_input
+      when "best sellers"
+        best_sellers
+     
+      when "play song"
+        play_song
+      end
+    end
+  end
   
     
     # genre_list

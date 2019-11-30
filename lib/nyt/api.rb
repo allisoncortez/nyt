@@ -2,9 +2,12 @@ class Nyt::API
   
   def fetch
     key = "C9IM2TSLGbkXfHjIpP2ThdAEHTkIZzFV"
-    url = "https://api.nytimes.com/svc/books/v3/lists/overview.json?api-key=#{key}"
-  
-  # response["results"]["lists"][0]["books"]
+    url = "https://api.nytimes.com/svc/books/v3/lists/best-sellers/history.json?offset=20&publisher=Penguin&api-key=#{key}"
+    
+    #list overview:  url = "https://api.nytimes.com/svc/books/v3/lists/overview.json?api-key=#{key}"
+    # penguin top 15: https://api.nytimes.com/svc/books/v3/lists/best-sellers/history.json?offset=20&publisher=Penguin&api-key=
+    
+    
     response = HTTParty.get(url)
     response["results"]["lists"][0]["books"].each do |book|
       # binding.pry
