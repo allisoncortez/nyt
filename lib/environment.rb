@@ -5,7 +5,7 @@ require_relative 'nyt/version'
 require_relative 'nyt/api'
 require_relative 'nyt/cli'
 require_relative 'nyt/books'
-require_relative 'nyt/genres'
+# require_relative 'nyt/genres'
 
 
 

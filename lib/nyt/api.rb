@@ -9,23 +9,17 @@ class Nyt::API
     
     
     response = HTTParty.get(url)
-    response["results"]["lists"][0]["books"].each do |book|
+    response["results"].each do |book|
+      
       # binding.pry
       
-      # list_name = list[display_name]
       title = book["title"]
       author = book["contributor"]
       description = book["description"]
-      links = book["buy_links"]
-      publisher = book["publisher"]
-      isbn = book["primary_isbn13"]
+      reviews = book["reviews"][0]["book_review_link"]
       
-      
-   
-    # book_title = response["results"]["books"][0]["title"]
-    # list_name = response["results"]["lists"][0]["list_name"]
     
-      Nyt::Books.new(title, author, description,links, publisher, isbn)
+      Nyt::Books.new(title, author, description,reviews)
     
     end
   end 
