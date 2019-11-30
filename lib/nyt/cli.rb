@@ -35,9 +35,11 @@ class Nyt::CLI
       # Nyt::Books.all.each do |book|
         # binding.pry
         puts "\n--------Book Details------------------------------------------------------"
-        puts "\n#{book.title}\n"
-        puts "Author:#{book.author}"
-        puts "#{book.description}"
+        puts "\n#{book.title} by #{book.author}\n"
+        puts "\nDescription: #{book.description}"
+        
+        #only put review if there is one.. need to code this..
+        puts "\nReview: #{book.reviews}"
   end
   
   
