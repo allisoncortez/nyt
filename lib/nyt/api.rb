@@ -10,9 +10,7 @@ class Nyt::API
     
     response = HTTParty.get(url)
     response["results"].each do |book|
-      
-      # binding.pry
-      
+ 
       title = book["title"]
       author = book["contributor"]
       description = book["description"]

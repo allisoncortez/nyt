@@ -6,7 +6,6 @@ class Nyt::CLI
     
     best_seller_list
     get_chosen_book
-    
   end
   
   def best_seller_list
@@ -15,10 +14,7 @@ class Nyt::CLI
     Nyt::Books.all.each.with_index(1) do |book, i|
       puts "#{i}. #{book.title} #{book.author}"
     end
-    
   end
-  
-  
   
   
   def get_chosen_book
@@ -28,7 +24,8 @@ class Nyt::CLI
   
   def book_details(chosen_book)
     book = @books[chosen_book - 1]
-    puts "#{book.title} #{book.author}"
+    puts "\n#{book["title"]} by #{book["author"]}:"
+    puts "Description:#{book["description"]}"
   end
   
   
