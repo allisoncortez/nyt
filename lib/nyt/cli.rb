@@ -1,17 +1,17 @@
 class Nyt::CLI 
   
   def call
-    puts "Hey there, Bookworm!...."
-    puts "Penguin's Top 15 best sellers.."
+    puts "\nHey there, Bookworm!"
+    puts "Here are Penguin's Top 15 best sellers.."
     
     best_seller_list
+    get_chosen_book
     
-    #get details for(book)
-    #list details
   end
   
   def best_seller_list
-    Nyt::API.new.fetch
+    puts "\nChoose a book to see it's details."
+    @books = Nyt::API.new.fetch
     Nyt::Books.all.each.with_index(1) do |book, i|
       puts "#{i}. #{book.title} #{book.author}"
     end
@@ -19,53 +19,62 @@ class Nyt::CLI
   end
   
   
-  def book_info
-  #   user_input = ""
-    
-  #   while user_input != "exit"
   
   
-    input = gets.strip.downcase
+  def get_chosen_book
+    chosen_book = gets.strip.to_i
+    book_details(chosen_book)
+  end
+  
+  def book_details(chosen_book)
+    book = @books[chosen_book - 1]
+    puts "#{book.title} #{book.author}"
+  end
+  
+  
+  
+  
+  
+    # input = gets.strip.downcase
  
-    if input.to_i > 0 
-    Nyt::API.new.fetch
-    Nyt::Books.all.each.with_index(1) do |list, i|
-      # binding.pry
-    puts "#{i}. #{list.title} #{list.author}"
-    puts "Description: #{list.description}"
-    puts "Publisher: #{list.publisher} - ISBN number: #{list.isbn}"
+    # if input.to_i > 0 
+    # Nyt::API.new.fetch
+    # Nyt::Books.all.each.with_index(1) do |list, i|
+    #   # binding.pry
+    # puts "#{i}. #{list.title} #{list.author}"
+    # puts "Description: #{list.description}"
+    # puts "Publisher: #{list.publisher} - ISBN number: #{list.isbn}"
     
     
-    end
-  end
-  end
+  #   end
+  # end
   
-  def menu 
-    input = nil
-    while input != "exit"
-      puts "MAIN MENU:"
-      puts "1. Input a number from the best seller list to view it's details."
-      puts "2. Type 'best sellers list' to view the full list again."
-      puts "5. Type 'exit' to leave."
+  # def menu 
+  #   input = nil
+  #   while input != "exit"
+  #     puts "MAIN MENU:"
+  #     puts "1. Input a number from the best seller list to view it's details."
+  #     puts "2. Type 'best sellers list' to view the full list again."
+  #     puts "5. Type 'exit' to leave."
       
-      input = gets.strip.downcase
-      if input.to_i > 0 
-        Nyt::API.new.fetch 
-        Nyt::Books.all.each.with_index(1) do |list|
-          # binding.pry
-        puts "#{list.title} #{list.author} - #{list.links}"
-        end
-        elsif input == "list"
-        best_sellers 
-      else 
-        puts "INVALID INPUT: type 'list' or 'exit'"
-      end 
-    end
-  end
+  #     input = gets.strip.downcase
+  #     if input.to_i > 0 
+  #       Nyt::API.new.fetch 
+  #       Nyt::Books.all.each.with_index(1) do |list|
+  #         # binding.pry
+  #       puts "#{list.title} #{list.author} - #{list.links}"
+  #       end
+  #       elsif input == "list"
+  #       best_sellers 
+  #     else 
+  #       puts "INVALID INPUT: type 'list' or 'exit'"
+  #     end 
+  #   end
+  # end
   
   
   
-  def bye 
-    puts "Bye Nerd."
-  end
+  # def bye 
+  #   puts "Bye Nerd."
+  # end
 end
