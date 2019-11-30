@@ -1,14 +1,13 @@
 class Nyt::CLI 
   
   def call
-  #   user_input = ""
-    
-  #   while user_input != "exit"
     puts "Hey there, Bookworm!...."
     puts "Penguin's Top 15 best sellers.."
     
     best_seller_list
     
+    #get details for(book)
+    #list details
   end
   
   def best_seller_list
@@ -18,28 +17,14 @@ class Nyt::CLI
     end
     
   end
-    
-  
-#   def genre_list
-#     input = gets.strip.downcase
-    
-#     if input.to_i > 0 
-#       Nyt::API.new.fetch
-#       Nyt::Books.all.each.with_index(1) do |list, i|
-#       puts "#{i}. #{list.title} #{list.author}"
-#     end
-#   end
-  
-#   def list
-#     Nyt::API.new.fetch
-#     Nyt::Books.all.each.with_index(1) do |list,i|
-      
-#       puts "#{i}. #{list.title}"
-#     end
-#   end
   
   
   def book_info
+  #   user_input = ""
+    
+  #   while user_input != "exit"
+  
+  
     input = gets.strip.downcase
  
     if input.to_i > 0 
