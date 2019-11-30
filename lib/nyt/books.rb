@@ -1,9 +1,10 @@
 class Nyt::Books
-  attr_accessor :title, :author, :description, :links, :publisher, :isbn
+  attr_accessor :list_name, :title, :author, :description, :links, :publisher, :isbn
   @@all = []
   
   
-  def initialize(title,author,description,links=nil,publisher,isbn)
+  def initialize(list_name,title,author,description,links=nil,publisher,isbn)
+    @list_name = list_name
     @title = title 
     @author = author
     @description = description
