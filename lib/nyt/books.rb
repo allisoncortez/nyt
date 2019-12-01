@@ -2,7 +2,6 @@ class Nyt::Books
   attr_accessor :title, :author, :description, :reviews
   @@all = []
   
-  
   def initialize(title,author,description,reviews)
     @title = title 
     @author = author
