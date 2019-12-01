@@ -12,8 +12,7 @@ class Nyt::CLI
     menu
     end
     
-    # get_list
-    best_seller_list
+    menu
     get_chosen_book
   end
   
@@ -38,11 +37,7 @@ class Nyt::CLI
   
   def book_details(chosen_book)
     book = Nyt::Books.all[chosen_book - 1]
-    # Nyt::Books.all.each do |item|
-      # binding.pry
-      
-      # Nyt::Books.all.each do |book|
-        # binding.pry
+
         puts "\n--------Book Details------------------------------------------------------"
         puts "\n#{book.title} by #{book.author}\n"
         puts "\nDescription: #{book.description}"
@@ -65,34 +60,33 @@ class Nyt::CLI
   #   end
   # end
   
-  # def menu 
-  #   input = nil
-  #   while input != "exit"
-  #     puts "MAIN MENU:"
-  #     puts "1. Input a number from the best seller list to view it's details."
-  #     puts "2. Type 'best sellers list' to view the full list again."
-  #     puts "5. Type 'exit' to leave."
+  def menu 
+    input = nil
+    while input != "exit"
+      puts "MAIN MENU:"
+      puts "1. Input a number from the best seller list to view it's details."
+      puts "2. Type 'list' to view the full list again."
+      puts "5. Type 'exit' to leave."
       
-  #     input = gets.strip.downcase
-  #     if input.to_i > 0 
-  #       Nyt::API.new.fetch 
-  #       Nyt::Books.all.each.with_index(1) do |list|
-  #         # binding.pry
-  #       puts "#{list.title} #{list.author} - #{list.links}"
-  #       end
-  #       elsif input == "list"
-  #       best_sellers 
-  #     else 
-  #       puts "INVALID INPUT: type 'list' or 'exit'"
-  #     end 
-  #   end
-  # end
+      input = gets.strip.downcase
+      if input.to_i > 0 
+      get_chosen_book
+      
+        elsif input == "list"
+        best_seller_list
+        
+        elsif input == "exit"
+        bye
+      else 
+        puts "INVALID INPUT: type 'list' or 'exit'"
+      end 
+    end
+  end
   
+  def bye 
+    puts "Bye Nerd."
+  end
   
-  
-  # def bye 
-  #   puts "Bye Nerd."
-  # end
   
   
   end
