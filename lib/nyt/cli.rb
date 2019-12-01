@@ -34,6 +34,8 @@ class Nyt::CLI
   def get_chosen_book
     chosen_book = gets.strip.to_i
     book_details(chosen_book)
+    sleep(1)
+    menu
   end
   
   def book_details(chosen_book)
@@ -47,20 +49,6 @@ class Nyt::CLI
         puts "\nReview: #{book.reviews}"
   end
   
-    # input = gets.strip.downcase
- 
-    # if input.to_i > 0 
-    # Nyt::API.new.fetch
-    # Nyt::Books.all.each.with_index(1) do |list, i|
-    #   # binding.pry
-    # puts "#{i}. #{list.title} #{list.author}"
-    # puts "Description: #{list.description}"
-    # puts "Publisher: #{list.publisher} - ISBN number: #{list.isbn}"
-    
-    
-  #   end
-  # end
-  
   def menu 
     input = nil
     while input != "exit"
@@ -71,15 +59,17 @@ class Nyt::CLI
       
       input = gets.strip.downcase
       if input.to_i > 0 
-      get_chosen_book
+      book_details
       
         elsif input == "list"
-        best_seller_list
+        get_chosen_book
         
         elsif input == "exit"
         bye
       else 
         puts "INVALID INPUT: type 'list' or 'exit'"
+        sleep(1)
+        menu
       end 
     end
   end
