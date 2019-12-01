@@ -12,7 +12,7 @@ class Nyt::CLI
     menu
     end
     
-    menu
+    # menu
     get_chosen_book
   end
   
@@ -23,8 +23,9 @@ class Nyt::CLI
   
   def best_seller_list
     puts "\nChoose a book to see it's details."
+    sleep(1)
     Nyt::API.new.fetch
-    Nyt::Books.all.each.with_index(1) do |book, i|
+    Nyt::Books.all.uniq.each.with_index(1) do |book, i|
       puts "#{i}. #{book.title} by #{book.author}"
     end
   end
@@ -65,7 +66,7 @@ class Nyt::CLI
     while input != "exit"
       puts "MAIN MENU:"
       puts "1. Input a number from the best seller list to view it's details."
-      puts "2. Type 'list' to view the full list again."
+      # puts "2. Type 'list' to view the full list again."
       puts "5. Type 'exit' to leave."
       
       input = gets.strip.downcase
