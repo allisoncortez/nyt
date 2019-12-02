@@ -33,22 +33,14 @@ class Nyt::CLI
   end
   
   
-  # def get_chosen_book
-  #   chosen_book = gets.strip.to_i
-  #   book_details(chosen_book)
-  #   sleep(1)
-  #   menu
-  # end
-  
   def book_details(input)
     book = Nyt::Books.all[input.to_i - 1]
 
         puts "\n------------Book Details------------------------------------------------------\n"
         puts "\n#{book.title} by #{book.author}\n"
+        puts "Publisher:#{book.publisher}"
         puts "Description: #{book.description}\n"
-        
-        #only put review if there is one.. need to code this..
-        puts "\nReview: #{book.reviews}"
+        puts "\nAmazon Link: #{book.link}"
         puts "\n-------------------------------------------------------------------------------\n"
   end
   

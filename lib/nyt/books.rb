@@ -1,12 +1,13 @@
 class Nyt::Books
-  attr_accessor :title, :author, :description, :reviews
+  attr_accessor :title, :author, :publisher, :description, :link
   @@all = []
   
-  def initialize(title,author,description,reviews)
+  def initialize(title,author,publisher,description,link)
     @title = title 
     @author = author
+    @publisher = publisher
     @description = description
-    @reviews = reviews
+    @link = link
     @@all << self 
   end 
   
