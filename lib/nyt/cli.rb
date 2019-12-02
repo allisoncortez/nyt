@@ -29,6 +29,7 @@ class Nyt::CLI
     end
     sleep(1)
     menu
+    
   end
   
   
@@ -42,12 +43,13 @@ class Nyt::CLI
   def book_details(input)
     book = Nyt::Books.all[input.to_i - 1]
 
-        puts "\n--------Book Details------------------------------------------------------\n"
+        puts "\n------------Book Details------------------------------------------------------\n"
         puts "\n#{book.title} by #{book.author}\n"
-        puts "\nDescription: #{book.description}"
+        puts "Description: #{book.description}\n"
         
         #only put review if there is one.. need to code this..
-        puts "Review: #{book.reviews}\n"
+        puts "\nReview: #{book.reviews}"
+        puts "\n-------------------------------------------------------------------------------\n"
   end
   
   
@@ -55,7 +57,8 @@ class Nyt::CLI
     input = nil
     
     while input != "exit"
-      puts "\nInput a number from the best seller list to view it's details.\n"
+      sleep(0.5)
+      puts "\nInput a number from the best seller list to view it's details."
       puts "Type 'list' to view the full list again."
       puts "If you'd like to exit, type 'exit'.\n"
       input = gets.strip.downcase
@@ -68,14 +71,14 @@ class Nyt::CLI
       elsif input == "exit"
         bye
       else 
-        puts "\nINVALID INPUT: type 'list' or 'exit'\n"
+        puts "\nINVALID INPUT: type 'list' or 'exit'"
       end 
     end
   end
   
   
   def bye 
-    puts "\nBye Nerd.\n"
+    puts "\nBye Nerd."
   end
   
 end
