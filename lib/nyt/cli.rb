@@ -7,13 +7,18 @@ class Nyt::CLI
     sleep(0.25)
     input = gets.strip.downcase
     
+    Nyt::API.new.fetch
     
-    if input == "y"
-    best_seller_list
-    elsif input == "n"
-    bye
-    elsif 
-    puts "invalid input: type 'list' or 'exit'."
+    until 
+    #option for capital Y
+      if input == "y"
+        best_seller_list
+        menu
+      elsif input == "n"
+        bye
+      else
+        puts "invalid input: type 'y' or 'n'."
+      end
     end
     
   end
@@ -23,12 +28,12 @@ class Nyt::CLI
     puts "\nHere are Penguin's Top 20 Bestsellers."
     sleep(0.25)
     
-    Nyt::API.new.fetch
+    # Nyt::API.new.fetch
     Nyt::Books.all.uniq.each.with_index(1) do |book, i|
       puts "#{i}. #{book.title} by #{book.author}"
     end
     sleep(1)
-    menu
+    # menu
     
   end
   
