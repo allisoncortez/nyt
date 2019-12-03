@@ -4,9 +4,7 @@ class Nyt::CLI
     Nyt::API.new.fetch
     
     greeting
-    sleep(0.5)
     best_seller_list
-    sleep(0.5)
     menu
   end
   
@@ -18,9 +16,9 @@ class Nyt::CLI
   
   def best_seller_list
     puts "\nHere's the current Bestseller list for Non-fiction books."
-    sleep(0.5)
+    sleep(0.25)
     puts "Check it out..."
-    sleep(1)
+    sleep(0.25)
     
     Nyt::Books.all.uniq.each.with_index(1) do |book, i|
       puts "#{i}. #{book.title} by #{book.author}"
@@ -31,17 +29,18 @@ class Nyt::CLI
   def book_details(input)
     book = Nyt::Books.all[input.to_i - 1]
         
+        sleep(0.25)
         puts "\n==========================================================\n"
+        sleep(0.25)
         puts "\nTitle: #{book.title}\n"
-        sleep(0.5)
+        sleep(0.25)
         puts "Author: #{book.author}"
-        sleep(0.5)
+        sleep(0.25)
         puts "Publisher: #{book.publisher}"
-        sleep(0.5)
+        sleep(0.25)
         puts "Description: #{book.description}\n"
-        sleep(0.5)
+        sleep(0.25)
         puts "\nAmazon Link: #{book.link}\n"
-        sleep(0.5)
         puts "\n==========================================================\n"
   end
   
@@ -50,13 +49,12 @@ class Nyt::CLI
     input = nil
     
     while input != "exit"
-      sleep(0.5)
+      sleep(0.25)
       puts "\nInput a number from the best seller list to view it's details."
       sleep(0.25)
       puts "Type 'list' to view the full list again."
-      sleep(0.25)
+      sleep(0.5)
       puts "If you'd like to exit, type 'exit'.\n"
-      sleep(0.25)
       input = gets.strip.downcase
       
       
@@ -74,7 +72,7 @@ class Nyt::CLI
   
   
   def bye 
-    sleep(0.25)
+    sleep(0.125)
     puts "\nBye Nerd ;)\n"
   end
 
