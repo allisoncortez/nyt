@@ -31,12 +31,14 @@ class Nyt::CLI
   def book_details(input)
     book = Nyt::Books.all[input.to_i - 1]
 
-        puts "\n------------Book Details------------------------------------------------------\n"
-        puts "\n#{book.title} by #{book.author}\n"
-        puts "Publisher:#{book.publisher}"
+        puts "\nBook Details"
+        puts "=================================================================================\n"
+        puts "\n#{book.title}\n"
+        puts "Author: #{book.author}"
+        puts "Publisher: #{book.publisher}"
         puts "Description: #{book.description}\n"
-        puts "\nAmazon Link: #{book.link}"
-        puts "\n-------------------------------------------------------------------------------\n"
+        puts "\nAmazon Link: #{book.link}\n"
+        puts "\n=================================================================================\n"
   end
   
   
@@ -68,11 +70,11 @@ class Nyt::CLI
   
   
   def bye 
-    puts "......"
+    puts "\n......"
     sleep(0.25)
     puts "..."
     sleep(0.25)
     puts "\nBye Nerd ;)\n"
   end
-  
+
 end
