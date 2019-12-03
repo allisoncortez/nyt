@@ -2,23 +2,29 @@ class Nyt::CLI
   
   def call
     Nyt::API.new.fetch
-    puts "\nHey there, Bookworm!"
-    sleep(1)
+    
+    greeting
+    sleep(0.5)
     best_seller_list
+    sleep(0.5)
     menu
   end
   
+  
+  def greeting
+    puts "\nHey there, Bookworm!"
+  end
+  
+  
   def best_seller_list
-    puts "\nHere are Penguin's Top 20 Bestsellers."
-    sleep(0.25)
+    puts "\nHere's the current Bestseller list for Non-fiction books."
+    sleep(0.5)
+    puts "Check it out..."
+    sleep(1)
     
-    # Nyt::API.new.fetch
     Nyt::Books.all.uniq.each.with_index(1) do |book, i|
       puts "#{i}. #{book.title} by #{book.author}"
     end
-    sleep(1)
-    # menu
-    
   end
   
   
@@ -40,8 +46,11 @@ class Nyt::CLI
     while input != "exit"
       sleep(0.5)
       puts "\nInput a number from the best seller list to view it's details."
+      sleep(0.25)
       puts "Type 'list' to view the full list again."
+      sleep(0.25)
       puts "If you'd like to exit, type 'exit'.\n"
+      sleep(0.25)
       input = gets.strip.downcase
       
       
@@ -59,7 +68,11 @@ class Nyt::CLI
   
   
   def bye 
-    puts "\nBye Nerd."
+    puts "......"
+    sleep(0.25)
+    puts "..."
+    sleep(0.25)
+    puts "\nBye Nerd ;)\n"
   end
   
 end
