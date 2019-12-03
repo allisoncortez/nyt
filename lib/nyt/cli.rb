@@ -1,28 +1,12 @@
 class Nyt::CLI 
   
   def call
+    Nyt::API.new.fetch
     puts "\nHey there, Bookworm!"
     sleep(1)
-    puts "Would you like to see top 15 bestseller list? (Y/N)\n"
-    sleep(0.25)
-    input = gets.strip.downcase
-    
-    Nyt::API.new.fetch
-    
-    until 
-    #option for capital Y
-      if input == "y"
-        best_seller_list
-        menu
-      elsif input == "n"
-        bye
-      else
-        puts "invalid input: type 'y' or 'n'."
-      end
-    end
-    
+    best_seller_list
+    menu
   end
- 
   
   def best_seller_list
     puts "\nHere are Penguin's Top 20 Bestsellers."
