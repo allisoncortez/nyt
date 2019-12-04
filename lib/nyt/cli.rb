@@ -15,13 +15,13 @@ class Nyt::CLI
   
   
   def best_seller_list
-    puts "\nHere's the current Bestseller list for Non-fiction books."
-    sleep(0.25)
-    puts "Check it out..."
-    sleep(0.25)
+    sleep(0.5)
+    puts "\nHere's the current Bestseller list for Non-fiction books. Check it out..."
+    sleep(0.5)
     
     Nyt::Books.all.uniq.each.with_index(1) do |book, i|
-      puts "#{i}. #{book.title} by #{book.author}"
+      puts "\n#{i}. #{book.title} by #{book.author}\n"
+      sleep(0.25)
     end
   end
   
@@ -29,8 +29,8 @@ class Nyt::CLI
   def book_details(input)
     book = Nyt::Books.all[input.to_i - 1]
         
-        sleep(0.25)
-        puts "\n==========================================================\n"
+        puts "\n============================================================================="
+        
         sleep(0.25)
         puts "\nTitle: #{book.title}\n"
         sleep(0.25)
@@ -40,8 +40,8 @@ class Nyt::CLI
         sleep(0.25)
         puts "Description: #{book.description}\n"
         sleep(0.25)
-        puts "\nAmazon Link: #{book.link}\n"
-        puts "\n==========================================================\n"
+        puts "\nBuy Link: #{book.link}\n"
+        sleep(0.25)
   end
   
   
@@ -50,10 +50,11 @@ class Nyt::CLI
     
     while input != "exit"
       sleep(0.25)
+      puts "=============================================================================\n"
       puts "\nInput a number from the best seller list to view it's details."
       sleep(0.25)
       puts "Type 'list' to view the full list again."
-      sleep(0.5)
+      sleep(0.25)
       puts "If you'd like to exit, type 'exit'.\n"
       input = gets.strip.downcase
       
@@ -65,14 +66,14 @@ class Nyt::CLI
       elsif input == "exit"
         bye
       else 
-        puts "\nINVALID INPUT: type 'list' or 'exit'"
+        puts "\nINVALID INPUT:"
       end 
     end
   end
   
   
   def bye 
-    sleep(0.125)
+    sleep(0.25)
     puts "\nBye Nerd ;)\n"
   end
 
