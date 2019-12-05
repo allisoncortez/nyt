@@ -1,6 +1,6 @@
-# The New York Times: Best Seller Booklists
+# The New York Times: Non-fiction Bestsellers
 
-This Ruby Gem provides a CLI to view the current Top 15 Best Sellers Book List for Non-fiction books as per the New York Times website.
+This Ruby Gem provides a CLI to view the current Bestsellers list for Non-fiction books as per the New York Times website.
 
 ## Installation
 
@@ -21,6 +21,7 @@ Or install it yourself as:
 ## Usage
 
 Type the following code below.
+
 ./bin run
 
 You will be greeted and given a list of the Top 15 Best Sellers Book List for Non-fiction books.
