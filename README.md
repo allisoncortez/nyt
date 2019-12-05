@@ -1,4 +1,4 @@
-# The New York Times: Non-fiction Bestsellers
+# For the Die Hard Nonfiction Lovers <3
 
 This Ruby Gem provides a CLI to view the current Bestsellers list for Non-fiction books as per the New York Times website.
 
@@ -26,7 +26,7 @@ Type the following code below.
 
 You will be greeted and given a list of the Top 15 Best Sellers Book List for Non-fiction books.
 
-You are then prompted to do either of the following:
+You are then prompted with a list of options to choose from:
 1. Pick a number from the list to find out more info on that specific book.
 2. See the full list of Best Sellers again.
 3. Exit the program.
