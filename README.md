@@ -33,6 +33,8 @@ You are then prompted with a list of options to choose from:
 
 I hope you find your next good read!
 
+<blockquote class="imgur-embed-pub" lang="en" data-id="a/SGz6L6A"><a href="//imgur.com/a/SGz6L6A">Me with my choccy milk before bed.</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
