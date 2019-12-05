@@ -1,8 +1,6 @@
-# Nyt
+# The New York Times: Best Seller Booklists
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/nyt`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+This Ruby Gem provides a CLI to view the current Top 15 Best Sellers Book List for Non-fiction books as per the New York Times website.
 
 ## Installation
 
@@ -22,7 +20,17 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Type the following code below.
+./bin run
+
+You will be greeted and given a list of the Top 15 Best Sellers Book List for Non-fiction books.
+
+You are then prompted to do either of the following:
+1. Pick a number from the list to find out more info on that specific book.
+2. See the full list of Best Sellers again.
+3. Exit the program.
+
+I hope you find your next good read!
 
 ## Development
 
