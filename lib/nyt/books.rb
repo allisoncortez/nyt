@@ -7,7 +7,11 @@ class Nyt::Books
     @author = author
     @publisher = publisher
     @description = description
-    @link = link
+    @link = link.sub(/^https?\:\/\//,'')
+    
+    #link.sub(/^https?\:\/\/(www.)?/,'')
+    #link.sub(/^https?\:\/\//,'')
+    
     @@all << self 
   end 
   
