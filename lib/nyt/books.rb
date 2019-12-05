@@ -7,10 +7,8 @@ class Nyt::Books
     @author = author
     @publisher = publisher
     @description = description
-    @link = link.sub(/^https?\:\/\//,'')
+    @link = link
     
-    #link.sub(/^https?\:\/\/(www.)?/,'')
-    #link.sub(/^https?\:\/\//,'')
     
     @@all << self 
   end 
@@ -18,7 +16,5 @@ class Nyt::Books
   def self.all 
     @@all 
   end
-  
-
   
 end

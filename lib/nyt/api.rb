@@ -10,15 +10,8 @@ class Nyt::API
       author = book["author"]
       publisher = book["publisher"]
       description = book["description"]
-      
-      
-      link = book["buy_links"][0]["url"]
-      #this would be my amazonlink
-      
-      # apple_link = book["buy_links"][1]["url"]
-      # barnes_n_noble_link = book["buy_links"][2]["url"]
-      # local_bookseller_link = book["buy_links"][3]["url"]
-      
+      link = book["buy_links"][0]["url"].sub(/^https?\:\/\//,'')
+    
     
       Nyt::Books.new(title,author,publisher,description,link)
     
