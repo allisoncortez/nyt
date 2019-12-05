@@ -10,17 +10,17 @@ class Nyt::CLI
   
   
   def greeting
-    puts "\nHey there, Bookworm!"
+    puts "\nHey there, Bookworm!".colorize(:light_magenta)
   end
   
   
   def best_seller_list
     sleep(0.5)
-    puts "\nHere's the current Bestseller list for Non-fiction books. Check it out..."
+    puts "Here's the current Bestseller list for Non-fiction books. Check it out...".colorize(:light_magenta)
     sleep(0.5)
     
     Nyt::Books.all.uniq.each.with_index(1) do |book, i|
-      puts "\n#{i}. #{book.title} by #{book.author}\n"
+      puts "#{i}. #{book.title} by #{book.author}"
       sleep(0.25)
     end
   end
@@ -29,7 +29,7 @@ class Nyt::CLI
   def book_details(input)
     book = Nyt::Books.all[input.to_i - 1]
         
-        puts "\n============================================================================="
+        puts "\n=============================================================================".colorize(:light_magenta)
         
         sleep(0.25)
         puts "\nTitle: #{book.title}\n"
@@ -50,12 +50,12 @@ class Nyt::CLI
     
     while input != "exit"
       sleep(0.25)
-      puts "=============================================================================\n"
-      puts "\nInput a number from the best seller list to view it's details."
+      puts "=============================================================================\n".colorize(:blue)
+      puts "\nInput a number from the best seller list to view it's details.".colorize(:light_blue)
       sleep(0.25)
-      puts "Type 'list' to view the full list again."
+      puts "Type 'list' to view the full list again.".colorize(:light_blue)
       sleep(0.25)
-      puts "If you'd like to exit, type 'exit'.\n"
+      puts "If you'd like to exit, type 'exit'.\n".colorize(:light_blue)
       input = gets.strip.downcase
       
       
@@ -66,7 +66,7 @@ class Nyt::CLI
       elsif input == "exit"
         bye
       else 
-        puts "\nINVALID INPUT:"
+        puts "\nINVALID INPUT:".colorize(:red)
       end 
     end
   end
@@ -74,7 +74,7 @@ class Nyt::CLI
   
   def bye 
     sleep(0.25)
-    puts "\nBye Nerd ;)\n"
+    puts "\nBye Nerd ;)\n".colorize(:light_yellow)
   end
 
 end
