@@ -32,12 +32,13 @@ You are then prompted with a list of options to choose from:
 3. Exit the program.
 
 To view a walkthrough of this API, click on the link below:
+
 https://youtu.be/adMIz0b2pgI
 
-If you want to know more about my process, check out my Blog!
+If you want to know more about my process, check out my blog:
 https://allisoncortez.github.io/for_people_who_3_nonfiction_my_first_cli_project
 
-I hope you find your next good book!
+I hope you find your next good book soon!
 
 ## Development
 
