@@ -1,6 +1,6 @@
-# For the Die Hard Nonfiction Lovers <3
+# For the Nonfiction Lovers <3
 
-This Ruby Gem provides a CLI to view the current Bestsellers list for Non-fiction books as per the New York Times website.
+This Ruby Gem provides a CLI to view the current Bestsellers list for Nonfiction books as per the New York Times website.
 
 ## Installation
 

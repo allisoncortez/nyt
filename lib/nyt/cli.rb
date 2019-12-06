@@ -15,7 +15,7 @@ class Nyt::CLI
   
   
   def best_seller_list
-    puts "Here are the current Nonfiction Bestsellers:".colorize(:light_yellow)
+    puts "Here are the current New York Times Nonfiction Bestsellers:".colorize(:light_yellow)
     sleep(0.5)
     
     Nyt::Books.all.uniq.each.with_index(1) do |book, i|
