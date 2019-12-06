@@ -22,7 +22,7 @@ Or install it yourself as:
 
 Type the following code below.
 
-./bin run
+    ./bin/run
 
 You will be greeted and given a list of the Top 15 Best Sellers Book List for Non-fiction books.
 
