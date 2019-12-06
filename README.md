@@ -32,7 +32,6 @@ You are then prompted with a list of options to choose from:
 3. Exit the program.
 
 To view a walkthrough of this API, click on the link below:
-
 https://youtu.be/adMIz0b2pgI
 
 If you want to know more about my process, check out my blog:
