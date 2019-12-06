@@ -1,6 +1,6 @@
 # For the Nonfiction Lovers <3
 
-This Ruby Gem provides a CLI to view the current Bestsellers list for Nonfiction books as per the New York Times website.
+This Ruby Gem provides a CLI to view the current Best Sellers list for Nonfiction books as per the New York Times website.
 
 ## Installation
 
@@ -24,14 +24,20 @@ Type the following code below.
 
     ./bin/run
 
-You will be greeted and given a list of the Top 15 Best Sellers Book List for Non-fiction books.
+You will be greeted and given a list of the Top 15 Nonfiction Best Sellers.
 
 You are then prompted with a list of options to choose from:
 1. Pick a number from the list to find out more info on that specific book.
 2. See the full list of Best Sellers again.
 3. Exit the program.
 
-I hope you find your next good read!
+To view a walkthrough of this API, click on the link below:
+https://youtu.be/adMIz0b2pgI
+
+If you want to know more about my process, check out my Blog!
+https://allisoncortez.github.io/for_people_who_3_nonfiction_my_first_cli_project
+
+I hope you find your next good book!
 
 ## Development
 
