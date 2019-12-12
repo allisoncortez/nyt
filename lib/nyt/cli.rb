@@ -54,7 +54,7 @@ class Nyt::CLI
       input = gets.strip.downcase
       
       
-      if input.to_i > 0 
+      if input.to_i > 0 && input.to_i < Nyt::Books.all.size
         book_details(input)
       elsif input == "list"
         best_seller_list
